@@ -9,6 +9,12 @@ import java.util.concurrent.TimeUnit;
 
 public class DateUtils {
 
+    /**
+     * Devuelve la cantidad de días entre dos fechas
+     * @param fechaInicio
+     * @param fechaFin
+     * @return
+     */
     public static int cantidadDias(String fechaInicio, String fechaFin){
 
         SimpleDateFormat myFormat = new SimpleDateFormat(Constantes.DD_MM_YYYY);
@@ -25,6 +31,12 @@ public class DateUtils {
         }
     }
 
+    /**
+     * Devuelve la cantidad de años entre dos fechas
+     * @param strDate1
+     * @param strDate2
+     * @return
+     */
     public static int getNumeroAnios(String strDate1, String strDate2) {
         int anios = 0;
 
@@ -34,8 +46,8 @@ public class DateUtils {
         SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy");
 
         try {
-            fecha1 = (Date)sdf1.parse(strDate1);
-            fecha2 = (Date)sdf2.parse(strDate2);
+            fecha1 = sdf1.parse(strDate1);
+            fecha2 = sdf2.parse(strDate2);
 
             int anio1 = Integer.parseInt(sdfYear.format(fecha1));
             int anio2 = Integer.parseInt(sdfYear.format(fecha2));
@@ -48,7 +60,13 @@ public class DateUtils {
         return anios;
     }
 
-
+    /**
+     * Transforma una fecha (Date) a un String con el formato
+     * indicado por pattern
+     * @param fecha
+     * @param pattern
+     * @return
+     */
     public static String dateToString(Date fecha, String pattern){
 
         SimpleDateFormat sf = new SimpleDateFormat(pattern);
@@ -57,7 +75,12 @@ public class DateUtils {
         return fechaSalida;
     }
 
-
+    /**
+     * Obtiene el proximo cumpleaños a partir de la
+     * fecha de nacimiento
+     * @param fechaNac
+     * @return
+     */
     public static String obtenerCumpleanio(String fechaNac){
 
         String fechaNacArr[] = fechaNac.split("-");
