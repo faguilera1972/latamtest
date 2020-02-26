@@ -53,6 +53,14 @@ public class DateUtils {
             int anio2 = Integer.parseInt(sdfYear.format(fecha2));
 
             anios = anio2 - anio1;
+
+            String cumple = obtenerCumpleanio(strDate1);
+
+            int diasCumple = cantidadDias(strDate2, cumple);
+            if(diasCumple > 0){
+                anios = anios - 1;
+            }
+
         } catch (ParseException ex) {
             System.err.println(ex.getMessage());
         }
