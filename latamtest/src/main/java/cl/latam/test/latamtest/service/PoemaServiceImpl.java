@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 
 @Service
 public class PoemaServiceImpl implements IPoemaService {
@@ -20,9 +19,6 @@ public class PoemaServiceImpl implements IPoemaService {
     public PoemaModel obtenerPoema() {
 
         RestTemplate restTemplate = new RestTemplate();
-
-        ListaPoemas lista = new ListaPoemas();
-
 
         ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(urlCumple, Object[].class);
 
