@@ -1,8 +1,9 @@
 package cl.latam.test.latamtest.utils;
 
+import cl.latam.test.latamtest.constantes.Constantes;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +11,7 @@ public class DateUtils {
 
     public static int cantidadDias(String fechaInicio, String fechaFin){
 
-        SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat myFormat = new SimpleDateFormat(Constantes.DD_MM_YYYY);
 
         try {
             Date date1 = myFormat.parse(fechaInicio);
@@ -28,8 +29,8 @@ public class DateUtils {
         int anios = 0;
 
         Date fecha1, fecha2 = null;
-        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
-        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sdf1 = new SimpleDateFormat(Constantes.DD_MM_YYYY);
+        SimpleDateFormat sdf2 = new SimpleDateFormat(Constantes.DD_MM_YYYY);
         SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy");
 
         try {

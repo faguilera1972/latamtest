@@ -1,5 +1,6 @@
 package cl.latam.test.latamtest.service;
 
+import cl.latam.test.latamtest.constantes.Constantes;
 import cl.latam.test.latamtest.model.PersonaInModel;
 import cl.latam.test.latamtest.model.PersonaOutModel;
 import cl.latam.test.latamtest.model.PoemaModel;
@@ -25,13 +26,14 @@ public class PersonasServiceImpl implements IPersonasService {
 
         personaInModel.setCumpleAnio(DateUtils.obtenerCumpleanio(personaInModel.getFechaNac()));
 
-        String fechaActual = DateUtils.dateToString(new Date(),"dd-MM-yyyy");
+        String fechaActual = DateUtils.dateToString(new Date(), Constantes.DD_MM_YYYY);
         int edad = DateUtils.getNumeroAnios(personaInModel.getFechaNac(),fechaActual);
 
         personaOutModel.setEdad(edad);
 
         int cantDiasCumple = DateUtils.cantidadDias(fechaActual,personaInModel.getCumpleAnio());
         personaOutModel.setDiasCumple(cantDiasCumple);
+        personaOutModel.setFechaNac(personaInModel.getFechaNac());
 
         if(cantDiasCumple == 0){
             PoemaModel poemaModel = poemaService.obtenerPoema();

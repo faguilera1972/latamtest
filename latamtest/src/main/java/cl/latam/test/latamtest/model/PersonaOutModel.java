@@ -26,6 +26,8 @@ public class PersonaOutModel {
     private String poema;
     @JsonProperty("poemaModel")
     private PoemaModel poemaModel;
+    @JsonProperty("fechaNac")
+    private String fechaNac;
 
     public String getNombre() {
         return nombre;
@@ -73,5 +75,13 @@ public class PersonaOutModel {
 
     public void setPoemaModel(PoemaModel poemaModel) {
         this.poemaModel = poemaModel;
+    }
+
+    public String getFechaNac() {
+        return fechaNac;
+    }
+
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
     }
 }
